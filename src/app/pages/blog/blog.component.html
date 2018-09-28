@@ -1,10 +1,15 @@
-<div>
-    <div class="row" *ngIf="blogData">
-        <div class="row col-12">
-            {{blogData.title}}
-        </div>
-        <div class="row col-12">
-            <p [innerHtml]="blogData.content"></p>
-        </div>
+<div class="container">
+  <div class="row" *ngIf="blogData">
+    <div class="col-12 align-content-center">
+      <p class="font-weight-bold fa-2x"> {{blogData.title}}</p>
     </div>
+    <div class="row col-12">
+       <div class="col-7">{{blogData.blogCategory.name}} {{blogData.author}}</div>
+       <div class="col-5">{{blogData.publishDate}}</div>
+    </div>
+    <div class="row col-12" >
+      <p [innerHtml]="blogData.content" class="embed-responsive"> </p>
+    </div>
+  </div>
 </div>
+

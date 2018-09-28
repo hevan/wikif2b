@@ -60,6 +60,8 @@ export class OriginViewComponent implements OnInit {
 
                 this.productOrigin = res.data;
 
+              console.log(this.productOrigin);
+
                 this.loadContent();
                  this.loadTrans()
             }

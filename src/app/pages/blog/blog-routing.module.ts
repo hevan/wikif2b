@@ -4,7 +4,7 @@ import { BlogViewComponent } from './blog.component';
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'detail/:id',
         component: BlogViewComponent
     }
 ];

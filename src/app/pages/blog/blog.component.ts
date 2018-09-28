@@ -18,8 +18,6 @@ import {BlogService} from "../../shared/services/cms/blog.service";
 })
 export class BlogViewComponent implements OnInit {
 
-
-    public curId;//当前数据ID
     public blogData:any;
 
     //构造
@@ -29,20 +27,26 @@ export class BlogViewComponent implements OnInit {
 
     //页面初始化
     ngOnInit() {
-        this.curId = this.route.snapshot.paramMap.get('id');
 
-        this.loadData();
+      this.route.params.subscribe(params => {
+        console.log(params);
+        if (params['id']) {
+          this.loadData(params['id']);
+        }
+      });
+
     }
 
-    loadData(){
-        if(this.curId){
-            this.blogService.find(this.curId).subscribe(res=>{
+    loadData(curId){
+           this.blogService.find(curId).subscribe(res=>{
                 if(res.code == 0){
 
                     this.blogData = res.data;
+
+                  console.log(this.blogData);
                 }
 
             });
-        }
+
     }
 }

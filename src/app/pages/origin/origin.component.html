@@ -1,20 +1,22 @@
+<div class="container">
+  <div class="row" *ngIf="productOrigin && productOrigin.commodityCode">
+    <ngb-carousel *ngIf="productOrigin.commodityCode.listMediaItem">
+      <ng-template ngbSlide *ngFor="let item of productOrigin.commodityCode.listMediaItem">
+        <img [src]="item.imageUrl" alt="Random slide">
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="row" *ngIf="batchCode">
 
-    <div class="row" *ngIf="productOrigin && productOrigin.commodityCode">
-      <ngb-carousel *ngIf="productOrigin.commodityCode.listMediaItem">
-        <ng-template ngbSlide *ngFor="let item of productOrigin.commodityCode.listMediaItem">
-          <img [src]="item.imageUrl" alt="Random slide">
-        </ng-template>
-      </ngb-carousel>
 
-      <div class="row">
-        <div class="col-12">{{productOrigin.commodityCode.name}}</div>
-      </div>
+      <div class="col-12">{{productOrigin.commodityCode.name}}</div>
 
-    </div>
-    <div class="row" *ngIf="batchCode">
-      <div class="col-12">{{batchCode.batchCode}}</div>
-      <div class="col-12">{{batchCode.plantBaseName}}</div>
-    </div>
+
+    <div class="col-12">{{batchCode.batchCode}}</div>
+    <div class="col-12">{{batchCode.plantBaseName}}</div>
+  </div>
+</div>
+
 
     <ngb-tabset>
       <ngb-tab title="种植信息">
