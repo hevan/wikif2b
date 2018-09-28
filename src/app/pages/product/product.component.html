@@ -1,0 +1,10 @@
+<div>
+    <div class="row" *ngIf="productData">
+        <div class="row col-12">
+            {{productData.name}}
+        </div>
+        <div class="row col-12">
+            <p [innerHtml]="productData.content"></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div>
+    <div class="row" *ngIf="archiveData">
+        <div class="row col-12">
+            {{archiveData.title}}
+        </div>
+        <div class="row col-12">
+            <p [innerHtml]="archiveData.content"></p>
+        </div>
+    </div>
+</div>

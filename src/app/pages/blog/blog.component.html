@@ -1,0 +1,10 @@
+<div>
+    <div class="row" *ngIf="blogData">
+        <div class="row col-12">
+            {{blogData.title}}
+        </div>
+        <div class="row col-12">
+            <p [innerHtml]="blogData.content"></p>
+        </div>
+    </div>
+</div>
